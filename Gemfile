@@ -65,6 +65,6 @@ gem 'dotenv-rails'
 gem "dockerfile-rails", ">= 1.5", :group => :development
 
 #changed
-gem "pg", "~> 1.4"
+#gem "pg", "~> 1.4"
 
 gem "redis", "~> 5.0"
