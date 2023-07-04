@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Collectionjrock</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Gasoek+One&family=Quicksand:wght@300&family=Rowdies:wght@700&family=Russo+One&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header>
+      <h2 class="header-title">CollectJrock</h2>
+      <div class="header-list">
+      <ul>
+        
+        <li><%= link_to "home", bands_path, class:'top' %></li>
+        <% if user_signed_in? %>
+        <li><%= button_to "logout", destroy_user_session_path, class:'top', method: :delete %></li>
+        <% end %>
+        <% unless user_signed_in? %>
+        <li><%= link_to "new Registration", new_user_registration_path, class:'top' %></li>
+        <li><%= link_to "login", new_user_session_path, class:'top' %></li>
+        <% end %>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <%= link_to "Add band", new_band_path, class:'top' %>
+          <% end %>
+        <% end %>
+
+      </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+</html>

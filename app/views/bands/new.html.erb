@@ -1,0 +1,27 @@
+<h1>バンド投稿ページ</h1>
+<h3>新規Tweet</h3>
+<%= form_for @band do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 140 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  
+  <div class='form-group'>
+        <%= f.collection_check_boxes(:festival_ids, Festival.all, :id, :name) do |fes| %>
+            <div class='form-check'>
+                <%= fes.label class: 'form-check-label' do %>
+                    <%= fes.check_box class: 'form-check-input' %>
+                    <%= fes.text %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+  <%= f.submit "追加する" %>
+<% end %>
+
+<%= link_to "トップページへ", bands_path %>

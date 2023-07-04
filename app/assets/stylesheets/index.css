@@ -1,0 +1,100 @@
+.slideshow {
+  width: 500px; /* スライドショーの幅 */
+  height: 100vh !important;/* スライドショーの高さ */
+  overflow: hidden; /* スライド領域をはみ出した部分を非表示にする */
+}
+.slide {
+  position: absolute; /* スライドを重ねるために絶対位置指定 */
+  width: 100%; /* 画像の幅をスライドショーと同じにする */
+  height: 100%; /* 画像の高さをスライドショーと同じにする */
+  object-fit: cover; /* 画像を領域に合わせて拡大縮小 */
+  opacity: 0; /* 初期状態では非表示 */
+  transition: opacity 1.5s ease-in-out; /* フェードイン・フェードアウトのアニメーション */
+}
+.slide.active {
+  opacity: 1; /* アクティブなスライドのみ表示 */
+}
+.button-parent{
+  position: relative;
+  bottom: 180px;
+  display: flex;
+}
+.live-button-left{
+  background-color: rgb(237, 128, 173);
+  display: block;
+  width: 50vw;
+  height: 27vh;
+  font-size: 3em;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.live-button-right{
+  background-color: rgb(90, 230, 243);
+  display: block;
+  width: 50vw;
+  height: 27vh;
+  font-size: 3em;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Quicksand', sans-serif;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.about{
+  background-color: aliceblue;
+}
+.top-title{
+  width: 100vw;
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 4em;
+  z-index: 2;
+  position: absolute;
+  color: aliceblue;
+  font-family: 'Caprasimo', cursive;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.second-title{
+  width: 100vw;
+  text-align: center;
+  margin-top: 17vh;
+  font-size: 4em;
+  z-index: 2;
+  position: absolute;
+  color: yellow;
+  font-family: 'Caprasimo', cursive;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.details1{
+  width: 100vw;
+  text-align: center;
+  margin-top: 30vh;
+  font-size: 2em;
+  
+  z-index: 2;
+  position: absolute;
+  color: whitesmoke;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.8);
+  font-family: 'Quicksand', sans-serif;
+}
+.details2{
+  width: 100vw;
+  text-align: center;
+  margin-top: 50vh;
+  font-size: 3em;
+  font-weight: bold;
+  z-index: 2;
+  position: absolute;
+  color: yellow;
+  /*border: 7px solid black;*/
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+  font-family: 'Quicksand', sans-serif;
+}

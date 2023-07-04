@@ -1,0 +1,56 @@
+<body>
+
+<body>
+  <div class="slideshow">
+    <%= image_tag 'fes1.jpg', class: 'slide' %>
+    <%= image_tag 'fes2.jpg', class: 'slide' %>
+    <%= image_tag 'fes3.jpg', class: 'slide' %>
+    <h1 class="top-title">Collection</h1><br><h1 class="second-title">jrock</h1>
+    <h4 class="details1">Search freely for your favorite bands and festivals<br>May the lives of <br>those who live in music be enriched<br></h4>
+    <h3 class="details2">No music No life ! !</h3>
+  </div>
+  <div class="button-parent">
+    <%= link_to "Festivals Search", live_info_bands_path, class:'live-button-left' %>
+    <%= link_to "Band Information", band_info_bands_path, class:'live-button-right' %>
+  </div>
+  <div class="about">
+  </div>
+</body>
+<script>
+// 画像の切り替え間隔（ミリ秒）
+const interval = 3000;
+// 画像のリスト
+const images = [
+  'live.png',
+  'live2.png',
+  'live3.png'
+];
+// 現在の画像のインデックス
+let currentIndex = 0;
+// スライドショーの要素を取得
+const slideshow = document.querySelector('.slideshow');
+// 画像要素を作成してスライドショーに追加
+images.forEach(image => {
+  const slide = document.createElement('img');
+  slide.src = image;
+  slide.classList.add('slide');
+  slideshow.appendChild(slide);
+});
+// 画像を切り替える関数
+function changeImage() {
+  // 現在のスライドを非表示にする
+  const currentSlide = slideshow.querySelector('.slide.active');
+  currentSlide.classList.remove('active');
+  // 次の画像のインデックスを計算
+  currentIndex = (currentIndex + 1) % images.length;
+  // 次のスライドを表示する
+  const nextSlide = slideshow.querySelectorAll('.slide')[currentIndex];
+  nextSlide.classList.add('active');
+  // 一定時間ごとに画像を切り替える
+  setTimeout(changeImage, interval);
+}
+// 初回の画像切り替えを開始
+slideshow.querySelector('.slide').classList.add('active');
+setTimeout(changeImage, interval);
+</script>
+

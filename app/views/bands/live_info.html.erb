@@ -1,0 +1,29 @@
+<body>
+<h3 class="pagetitle">Festivals Search</h3>
+<%= form_tag({controller:"bands",action:"live_info"}, method: :get) do %>
+    <div class="bandparent">
+    <% Band.pluck("name").uniq.each do |b| %>
+        <div class="bandcard">
+        <% image = Band.find_by(name: b)&.image %>
+            <div class="liveimageparent">
+            <% if image.present? %>
+            <%= image_tag(image.url, class: 'liveimage', cloud_name: 'de7ywaz6s') %>
+            <% end %>
+            </div>
+            <span class="bandtitle"><%= check_box :word, b %><%= b%></span>
+        </div>
+    <% end %>
+    </div>
+    <%= submit_tag 'search',class:'searchbutton' %>
+<% end %>
+<% if @livelist %>
+    <% @livelist.pluck("name").uniq.each do |live| %>
+        <% if live == "numbershot" %>
+            <a href="https://numbershot.jp/2023/" class="feslink">numbershot</a>
+        <% end %>
+        <% if live == "WILDBUNCH" %>
+            <a href="https://numbershot.jp/2023/" class="feslink">WILDBUNCH</a>
+        <% end %>
+    <% end %>
+<% end %>
+</body>

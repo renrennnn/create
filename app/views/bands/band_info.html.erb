@@ -1,0 +1,9 @@
+<h1>バンド情報ページ</h1>
+
+  <% @bands.each do |t| %>
+  <div>
+    <%= t.name %>
+  </div>
+  <% end %>
+
+<%= link_to "トップページへ", bands_path %>

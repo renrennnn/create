@@ -1,0 +1,60 @@
+.pagetitle{
+    color: yellow;
+    font-family: 'Caprasimo', cursive;
+    font-size: 4em;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    background-color: #FFFEA1;
+}
+
+.liveimage{
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+    background-color: black;
+}
+
+.bandcard{
+    width: 300px;
+    height: 280px;
+    margin: 30px;
+    background-color: white;
+    box-shadow: 10px 10px 15px -10px;
+    text-align: center;
+}
+
+.bandtitle{
+    font-size: 1.1em;
+    font-family: 'Quicksand', sans-serif;
+    display: block;
+    margin-top: 12px;
+}
+
+.searchbutton{
+    font-size: 3em;
+    font-family: 'Quicksand', sans-serif;
+    color: yellow;
+    background-color: black;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bandparent{
+    max-width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.liveimageparent{
+    width: 300px;
+    height: auto;
+}
+
+.feslink{
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    justify-content: space-between;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
